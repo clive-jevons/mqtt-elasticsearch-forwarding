@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#VBoxManage controlvm "default" natpf1 "mqttbroker,tcp,,1883,,1883"
+VBoxManage controlvm "default" natpf1 "es1,tcp,,9200,,9200"
+VBoxManage controlvm "default" natpf1 "es2,tcp,,9300,,9300"
