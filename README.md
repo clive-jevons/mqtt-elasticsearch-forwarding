@@ -18,3 +18,7 @@ and then you can track the progress with `docker-compose logs -f`.
 ## Groovy
 
 See [the Groovy subproject](./groovy/README.md).
+
+## Python
+
+See [the Python subproject](./python/README.md).
