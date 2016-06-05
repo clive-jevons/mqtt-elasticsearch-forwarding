@@ -1,0 +1,21 @@
+apply plugin: 'war'
+
+group = "net.jevons-it"
+version = "0.1-SNAPSHOT"
+
+repositories {
+  mavenCentral()
+  mavenLocal()
+  jcenter()
+}
+
+dependencies {
+  providedCompile 'javax:javaee-api:7.0'
+  compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
+  compile 'org.slf4j:slf4j-api:1.7.7'
+  compile 'org.slf4j:slf4j-jdk14:1.7.7'
+}
+
+war {
+  archiveName = 'payara-micro-consumer.war'
+}
