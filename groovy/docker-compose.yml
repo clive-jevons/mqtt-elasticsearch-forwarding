@@ -19,5 +19,5 @@ services:
       #- "9300:9300"
 
   consumer:
-    image: 'carsharing-consumer'
-    container_name: 'carsharing-consumer'
+    image: 'groovy-consumer'
+    container_name: 'groovy-consumer'

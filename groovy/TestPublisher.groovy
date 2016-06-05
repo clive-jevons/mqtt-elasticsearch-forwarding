@@ -18,7 +18,7 @@ jsonBuilder.person {
 }
 String json = JsonOutput.prettyPrint(jsonBuilder.toString())
 
-MqttClient client = new MqttClient(config.brokerAddress, "d:bmw:groovy:grv1", dataStore)
+MqttClient client = new MqttClient(config.brokerAddress, "d:groovy:grv1", dataStore)
 MqttConnectOptions connectOptions = new MqttConnectOptions(cleanSession: true)
 
 println "Connecting to: ${config.brokerAddress}"
