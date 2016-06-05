@@ -12,8 +12,7 @@ class MqttClient(object):
         self.paho_client = mqtt.Client()
         self.paho_client.on_connect = self.on_connect
         self.paho_client.on_message = self.on_message
-        #self.paho_client.connect("mqttbroker", 1883, 60)
-        self.paho_client.connect("localhost", 1883, 60)
+        self.paho_client.connect("mqttbroker", 1883, 60)
         self.paho_client.subscribe(self.topic_name, 1)
         self.paho_client.loop_start()
 

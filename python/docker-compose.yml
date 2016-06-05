@@ -18,6 +18,6 @@ services:
       - "9200:9200"
       - "9300:9300"
 
-  #consumer:
-    #image: 'python-consumer'
-    #container_name: 'python-consumer'
+  consumer:
+    image: 'python-consumer'
+    container_name: 'python-consumer'

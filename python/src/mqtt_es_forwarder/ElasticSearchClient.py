@@ -1,34 +1,27 @@
-from elasticsearch_dsl.connections import connections
-from elasticsearch_dsl import DocType, String
-import uuid
-
-class ClientEvent(DocType):
-
-    message = String()
-
-    class Meta:
-        index = 'clientevents'
-        doc_type = 'clientevent'
+from elasticsearch import Elasticsearch
+import uuid, json, sys, os
 
 class ElasticSearchClient(object):
 
     def __init__(self):
-        #connections.create_connection(hosts=['elasticsearch'], timeout=20)
-        connections.create_connection(hosts=['localhost'], timeout=20)
-        ClientEvent.init()
+        self.elasticsearch = Elasticsearch([{'host': 'elasticsearch', 'port': 9200}])
+        self.elasticsearch.indices.create(index = 'clientevents', ignore=400)
         print "ElasticSearch client initialised"
 
     def publish(self, message):
-        print "Publishing: %s" % message
+        doc_id = str(uuid.UUID(bytes=os.urandom(16), version=4))
+        print "Publishing: %s with ID %s" % (message, doc_id)
         try:
-            client_event = ClientEvent(message = message)
-            client_event.meta.id = uuid.uuid4().int()
-            print "About to save: %s" % str(client_event)
-            client_event.save()
-            print "Finished calling save."
+            self.elasticsearch.index(index = 'clientevents',
+                doc_type = 'clientevent',
+                id = doc_id,
+                body = {
+                    'message': message
+                })
         except:
-            print "Error creating client event: %s" % str(e)
+            print "Error creating client event: %s" % str(sys.exc_info()[0])
+        finally:
+            print "Exiting publish for %s" % message
 
     def close(self):
-        try: connections.remove_connection('default')
-        except: print "Unable to close ES connection"
+        self.elasticsearch = None
