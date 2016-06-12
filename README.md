@@ -22,3 +22,7 @@ See [the Groovy subproject](./groovy/README.md).
 ## Python
 
 See [the Python subproject](./python/README.md).
+
+## JEE / Payara Micro
+
+See [the Payara Micro subject](./payara-micro/README.md).
