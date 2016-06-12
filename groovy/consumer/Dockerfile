@@ -1,4 +1,4 @@
-FROM zeroturnaround/groovy
+FROM groovy-base
 
 ENV PATH /opt/groovy/bin:${PATH}
 
