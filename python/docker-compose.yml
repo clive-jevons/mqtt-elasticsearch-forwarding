@@ -21,3 +21,7 @@ services:
   consumer:
     image: 'python-consumer'
     container_name: 'python-consumer'
+
+  producer:
+    image: 'producer'
+    container_name: 'producer'

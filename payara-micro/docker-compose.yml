@@ -21,3 +21,7 @@ services:
   consumer:
     image: 'payara-micro-consumer'
     container_name: 'payara-micro-consumer'
+
+  producer:
+    image: 'producer'
+    container_name: 'producer'
