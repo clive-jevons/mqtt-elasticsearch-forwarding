@@ -1,0 +1,14 @@
+apply plugin: "groovy"
+apply plugin: "application"
+
+mainClassName = "Producer"
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
+  compile 'org.codehaus.gpars:gpars:1.2.1'
+  compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+}
