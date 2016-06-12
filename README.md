@@ -25,4 +25,8 @@ See [the Python subproject](./python/README.md).
 
 ## JEE / Payara Micro
 
-See [the Payara Micro subject](./payara-micro/README.md).
+See [the Payara Micro subproject](./payara-micro/README.md).
+
+## Producer
+
+See [the producer subproject](./producer/README.md).
