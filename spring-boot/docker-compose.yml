@@ -20,12 +20,9 @@ services:
 
   consumer:
     image: 'spring-boot-consumer'
-    container_name: 'spring-boot-consumer'
 
   producer:
     image: 'producer'
-    container_name: 'producer'
 
   watchdog:
     image: 'watchdog'
-    container_name: 'watchdog'

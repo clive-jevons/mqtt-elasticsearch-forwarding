@@ -3,7 +3,7 @@ package net.jevonsit.ingest.clientevents.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "message", shards = 1, replicas = 0, refreshInterval = "-1")
+@Document(indexName = "clientevents", type = "clientevent", shards = 1, replicas = 0, refreshInterval = "-1")
 public class Message {
 
     @Id
