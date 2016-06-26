@@ -7,10 +7,9 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-@EnableElasticsearchRepositories(basePackages = "com.bmw.carsharing.ingest.clientevents.repository")
-@ComponentScan(basePackages = {"com.bmw.carsharing.ingest.clientevents"})
+@EnableElasticsearchRepositories(basePackages = "net.jevonsit.ingest.clientevents.repository")
+@ComponentScan(basePackages = {"net.jevonsit.ingest.clientevents"})
 @EnableAsync
-//@ComponentScan(basePackages = {"com.bmw.carsharing.ingest.clientevents", "com.bmw.carsharing.ingest.clientevents.service", "com.bmw.carsharing.ingest.clientevents.repository"})
 public class Application {
 
     public static void main(String[] args) {
