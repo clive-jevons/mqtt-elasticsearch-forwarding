@@ -27,6 +27,13 @@ See [the Python subproject](./python/README.md).
 
 See [the Payara Micro subproject](./payara-micro/README.md).
 
+## Spring Boot
+See [the Spring Boot subproject](./spring-boot/README.md).
+
 ## Producer
 
 See [the producer subproject](./producer/README.md).
+
+## Watchdog
+
+See [the watchdog subproject](./watchdog/README.md).
