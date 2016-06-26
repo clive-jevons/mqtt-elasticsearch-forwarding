@@ -2,6 +2,7 @@ apply plugin: "groovy"
 apply plugin: "application"
 
 mainClassName = "Consumer"
+applicationName = 'groovy-consumer'
 
 repositories {
   mavenCentral()
