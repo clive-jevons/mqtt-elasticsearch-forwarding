@@ -25,3 +25,7 @@ services:
   producer:
     image: 'producer'
     container_name: 'producer'
+
+  watchdog:
+    image: 'watchdog'
+    container_name: 'watchdog'
