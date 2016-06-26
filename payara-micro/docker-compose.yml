@@ -20,12 +20,9 @@ services:
 
   consumer:
     image: 'payara-micro-consumer'
-    container_name: 'payara-micro-consumer'
 
   producer:
     image: 'producer'
-    container_name: 'producer'
 
   watchdog:
     image: 'watchdog'
-    container_name: 'watchdog'

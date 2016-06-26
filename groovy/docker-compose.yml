@@ -20,12 +20,9 @@ services:
 
   consumer:
     image: 'groovy-consumer'
-    container_name: 'groovy-consumer'
 
   producer:
     image: 'producer'
-    container_name: 'producer'
 
   watchdog:
     image: 'watchdog'
-    container_name: 'watchdog'
