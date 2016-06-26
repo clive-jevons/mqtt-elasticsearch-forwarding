@@ -1,14 +1,14 @@
-import groovyx.gpars.GParsExecutorsPool
-
-import java.util.UUID;
-
 import org.elasticsearch.client.transport.TransportClient
 import org.elasticsearch.common.settings.Settings
 import org.elasticsearch.common.transport.InetSocketTransportAddress
 
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
+
 class ElasticClient implements java.io.Closeable {
 
   TransportClient elasticClient
+  ExecutorService executorService = Executors.newCachedThreadPool()
 
   def ElasticClient() {
     println "Creating elasticsearch elasticClient"
@@ -20,23 +20,21 @@ class ElasticClient implements java.io.Closeable {
   }
 
   def addToIndex(String topic, String message) {
-    GParsExecutorsPool.withPool {
-      GParsExecutorsPool.executeAsync {
-        println "Creating index for ${topic} / ${message}"
-        try {
-          elasticClient.index {
-            index "clientevents"
-            type "clientevent"
-            id "${UUID.randomUUID().toString()}"
-            source {
-              the_message = message
-              the_topic = topic
-              test = "Test string"
-            }
+    executorService.submit {
+      println "Creating index for ${topic} / ${message}"
+      try {
+        elasticClient.index {
+          index "clientevents"
+          type "clientevent"
+          id "${UUID.randomUUID().toString()}"
+          source {
+            the_message = message
+            the_topic = topic
+            test = "Test string"
           }
-        } catch (Exception e) {
-          e.printStackTrace()
         }
+      } catch (Exception e) {
+        e.printStackTrace()
       }
     }
     println "Creation of index for ${topic} / ${message} queued ..."
@@ -44,7 +42,7 @@ class ElasticClient implements java.io.Closeable {
 
   void close() throws java.io.IOException {
     try {
-      node.close()
+      elasticClient.close()
     } catch (Exception e) {
       e.printStackTrace()
     }

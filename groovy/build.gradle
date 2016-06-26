@@ -10,7 +10,6 @@ repositories {
 
 dependencies {
   compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
-  compile 'org.codehaus.gpars:gpars:1.2.1'
   compile 'org.elasticsearch:elasticsearch-groovy:2.1.2'
   compile 'org.elasticsearch.plugin:delete-by-query:2.3.3'
 }
