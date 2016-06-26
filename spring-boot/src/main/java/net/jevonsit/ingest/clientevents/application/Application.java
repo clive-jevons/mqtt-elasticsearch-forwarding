@@ -1,6 +1,5 @@
 package net.jevonsit.ingest.clientevents.application;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +11,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ComponentScan(basePackages = {"com.bmw.carsharing.ingest.clientevents"})
 @EnableAsync
 //@ComponentScan(basePackages = {"com.bmw.carsharing.ingest.clientevents", "com.bmw.carsharing.ingest.clientevents.service", "com.bmw.carsharing.ingest.clientevents.repository"})
-@Ignore
 public class Application {
 
     public static void main(String[] args) {
