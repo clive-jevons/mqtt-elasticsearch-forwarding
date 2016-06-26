@@ -17,10 +17,10 @@ class Watchdog {
           def json = slurper.parse(reader)
           if (!startTime) startTime = new Date()
           long timediff = (new Date().time - startTime.time) / 1000
-          println "Count after ${timediff} seconds: ${json.count}"
+          println "${new Date()} Count after ${timediff} seconds: ${json.count}"
         }
       } catch (Exception e) {
-        println "Problem while getting count data: ${e.getMessage()}"
+        println "${new Date()} Problem while getting count data: ${e.getMessage()}"
       }
       Thread.sleep(1000)
     }
