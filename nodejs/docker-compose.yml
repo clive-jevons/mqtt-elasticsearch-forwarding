@@ -1,0 +1,28 @@
+version: '2.0'
+
+services:
+
+  mqttbroker:
+    image: 'ansi/mosquitto'
+    container_name: 'mqttbroker'
+    entrypoint:
+      - /usr/local/sbin/mosquitto
+      - '-v'
+    ports:
+      - "1883:1883"
+
+  elasticsearch:
+    image: 'elasticsearch:2.3.3'
+    container_name: 'elasticsearch'
+    ports:
+      - "9200:9200"
+      #- "9300:9300"
+
+  consumer:
+    image: 'nodejs-consumer'
+
+  producer:
+    image: 'producer'
+
+  watchdog:
+    image: 'watchdog'

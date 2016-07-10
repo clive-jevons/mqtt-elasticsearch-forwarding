@@ -1,0 +1,19 @@
+{
+	"name": "nodejs-mqtt-forwarder",
+	"version": "1.0.0",
+	"description": "forwards mqtt messages to an elasticsearch instance",
+	"author": "Clive Jevons <clive@jevons-it.net>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/clive-jevons/mqtt-elasticsearch-forwarding"
+	},
+	"scripts": {
+		"start": "node forwarder.js"
+	},
+	"dependencies": {
+		"mqtt": "*",
+		"elasticsearch": "*",
+		"node-uuid": "*"
+	},
+	"license": "Apache-2.0"
+}
