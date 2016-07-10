@@ -41,6 +41,9 @@ See [the Payara Micro subproject](./payara-micro/README.md).
 ## Spring Boot
 See [the Spring Boot subproject](./spring-boot/README.md).
 
+## Node.js
+See [the Node.js subproject](./nodejs/README.md).
+
 ## Producer
 
 See [the producer subproject](./producer/README.md).
